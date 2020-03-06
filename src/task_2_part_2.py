@@ -1,5 +1,4 @@
-team = 56
-gamma = 0.99
+gamma = 0.1
 delta = 0.001
 
 SHOOT = 0
@@ -10,9 +9,7 @@ MDhealthLen = 5
 ArrowLen = 4
 StaminaLen = 3
 
-arr = [0.5, 1, 2]
-Y = arr[team % 3]
-penalty = -10 / Y
+penalty = -2.5
 
 iteration = 0
 
@@ -72,10 +69,10 @@ while(1):
                 if abs(newUtility - statespace[MDhealth][arrow][stamina]) > maxDiff:
                     maxDiff = abs(newUtility - statespace[MDhealth][arrow][stamina])
                 newstatespace[MDhealth][arrow][stamina] = newUtility
-                print("("+str(MDhealth)+","+str(arrow)+","+str(stamina)+"):"+maxAction+"=["+str(round(newUtility,3))+"]")
+                print("("+str(MDhealth)+","+str(arrow)+","+str(stamina)+"):"+maxAction+"=["+str(round(newUtility, 3))+"]")
     statespace = newstatespace
     iteration += 1
-    if maxDiff >= delta:
+    if maxDiff > delta:
         print("\n\n")
     else:
         break
