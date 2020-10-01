@@ -19,10 +19,6 @@ iteration = 0
 
 statespace = [[[0 for i in range(StaminaRange)] for j in range(ArrowRange)] for k in range(MDhealthRange)]
 newstatespace = [[[0 for i in range(StaminaRange)] for j in range(ArrowRange)] for k in range(MDhealthRange)]
-# for i in range(ArrowRange):
-#     for j in range(StaminaRange):
-#         statespace[0][i][j] = 10
-#         newstatespace[0][i][j] = 10
 
 while(1):
     maxDiff = -1
@@ -77,5 +73,3 @@ while(1):
     iteration += 1
     if maxDiff >= delta:
         print("\n\n")
-    # else:
-    #     break
